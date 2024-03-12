@@ -1,0 +1,31 @@
+<h1>titulo</h1>
+
+<button id="boton">boton</button>
+<input type="text" id="input">
+<br>
+<br>
+<label id="idtexto"></label>
+
+<script>
+    function ejecutar() {
+
+        const texto = document.getElementById("idtexto")
+        const boton = document.getElementById("boton")
+        const input = document.getElementById("input")
+
+        boton.addEventListener("click", () => {
+            if (!input.value) {
+                alert("Ingrese un texto")
+                texto.style.backgroundColor = "yellow"
+                texto.style.color = "red"
+                texto.textContent = "por favor ingrese un texto"
+            } else {
+                texto.textContent = input.value
+                alert("El texto cargado es: " + input.value)
+                console.log("valor del texto: ", input.value);
+            }
+        })
+    }
+
+    ejecutar()
+</script>
